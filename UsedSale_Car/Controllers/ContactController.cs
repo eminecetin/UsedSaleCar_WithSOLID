@@ -9,7 +9,7 @@ namespace UsedSale_Car.Controllers
     public class ContactController : Controller
     {
         // GET: Contact
-        public ActionResult Index()
+        public ActionResult ContactIndex()
         {
             return View();
         }

@@ -30,6 +30,6 @@ namespace UsedSale_Car.Models.Classes
             get { return eMail; }
             set { eMail = value; }
         }
-
+       
     }
 }

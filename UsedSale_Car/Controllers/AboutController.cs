@@ -9,9 +9,14 @@ namespace UsedSale_Car.Controllers
     public class AboutController : Controller
     {
         // GET: About
-        public ActionResult Index()
+        public ActionResult AIndex()
         {
             return View();
         }
+        public ActionResult AboutDetail()
+        {
+            return View();
+        }
+
     }
 }

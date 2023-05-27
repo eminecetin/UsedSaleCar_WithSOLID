@@ -260,14 +260,15 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutProject.cshtml" />
+    <Content Include="Views\About\AIndex.cshtml" />
+    <Content Include="Views\About\AboutDetail.cshtml" />
+    <Content Include="Views\Contact\ContactIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\About\" />
     <Folder Include="Views\Admin\" />
     <Folder Include="Views\CarOwner\" />
     <Folder Include="Views\Car\" />
-    <Folder Include="Views\Contact\" />
     <Folder Include="Views\Login\" />
   </ItemGroup>
   <ItemGroup>
