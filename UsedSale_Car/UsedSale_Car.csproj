@@ -142,8 +142,11 @@
     <Compile Include="Models\Classes\Admin.cs" />
     <Compile Include="Models\Classes\Brands.cs" />
     <Compile Include="Models\Classes\Car.cs" />
+    <Compile Include="Models\Classes\CarListing.cs" />
     <Compile Include="Models\Classes\CarOwner.cs" />
     <Compile Include="Models\Classes\CarType.cs" />
+    <Compile Include="Models\Classes\City.cs" />
+    <Compile Include="Models\Classes\Color.cs" />
     <Compile Include="Models\Classes\Comment.cs" />
     <Compile Include="Models\Classes\Contact.cs" />
     <Compile Include="Models\Classes\Context.cs" />

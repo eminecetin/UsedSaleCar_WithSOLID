@@ -16,6 +16,8 @@ namespace UsedSale_Car.Models.Classes
         public DbSet<Comment> Comments { get; set; }
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Models> Modelss { get; set; }
+        public DbSet<Color> Colors { get; set; }
+        public DbSet<City> Cities { get; set; }
 
 
     }
