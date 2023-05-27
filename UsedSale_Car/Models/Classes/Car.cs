@@ -9,6 +9,7 @@ namespace UsedSale_Car.Models.Classes
     public class Car
     {
         [Key]
+        public int Id { get; set; }
         public int VehicleID { get; set; }
         public CarType CarType { get; set; }
         public int TypeID { get; set; }
