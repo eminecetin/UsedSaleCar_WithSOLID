@@ -3,19 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using UsedSale_Car.Models.Classes;
 
 namespace UsedSale_Car.Controllers
 {
     public class AboutController : Controller
     {
         // GET: About
-        public ActionResult AIndex()
+
+        Context c = new Context();
+        public ActionResult AboutIndex()
         {
-            return View();
+            var degerler = c.AboutUses.ToList();
+            return View(degerler);
         }
-        public ActionResult AboutDetail()
+        public ActionResult AboutDetail(int id)
         {
-            return View();
+            var d = c.AboutUses.Where(a => a.ID ==id).ToList();
+            return View(d);
         }
 
     }

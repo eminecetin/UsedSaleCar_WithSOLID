@@ -9,7 +9,7 @@ namespace UsedSale_Car.Models.Classes
     public class Color
     {
         [Key]
-        public int ColorId { get; set; }
+        public int ID { get; set; }
         public string Name { get; set; }
     }
 }

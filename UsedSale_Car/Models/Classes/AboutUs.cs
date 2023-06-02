@@ -10,8 +10,8 @@ namespace UsedSale_Car.Models.Classes
     {
         [Key]
         public int ID { get; set; }
-        public string Goals { get; set; }
-        public string Work { get; set; }
-        public string Passion { get; set; }
+        public string FotoUrl { get; set; }
+        public string Title { get; set; }
+        public string Description { get; set; }
     }
 }

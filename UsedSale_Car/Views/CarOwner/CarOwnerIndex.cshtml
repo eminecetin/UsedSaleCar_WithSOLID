@@ -1,0 +1,34 @@
+﻿@model UsedSale_Car.Models.Classes.CarListing
+@{
+    ViewBag.Title = "CarOwnerIndex";
+    Layout = "~/Views/Shared/_CarOwnerLayout.cshtml";
+}
+
+<h2>ARABALAR</h2>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th> ARABA ID </th>
+        <th> ARABA BRAND </th>
+        <th> ARABA MODEL </th>
+        <th> ARABA FİYAT </th>
+        <th> ARABA SİL </th>
+        <th> ARABA DÜZENLE </th>
+        <th> ARABA DETAYLARI </th>
+    </tr>
+    @foreach (var x in Model.ValueCar)
+    {
+        <tr>
+            <th> @x.ID </th>
+            <th> @x.Brand.BrandName </th>
+            <th> @x.Model.ModelName </th>
+            <th> @x.Price </th>
+            <th> <a href="/Admin/DeleteCar/@x.ID" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i>Sil</a></th>
+            <th> <a href="/Admin/GetCar/@x.ID" class="btn btn-warning">Düzenle</a></th>
+            <th> <a href="/Car/CarDetail/@x.ID" class="btn btn-primary">Detaylar</a></th>
+        </tr>
+    }
+</table>
+
+<a href="/CarOwner/NewCar" class="btn btn-info" style="font-size:large">ARABA EKLE</a>
+

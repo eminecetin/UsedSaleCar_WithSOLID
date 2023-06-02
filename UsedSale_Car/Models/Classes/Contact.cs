@@ -9,7 +9,7 @@ namespace UsedSale_Car.Models.Classes
     public class Contact
     {
         [Key]
-        public int ContactID { get; set; }
+        public int ID { get; set; }
         public string Name { get; set; }
         public string eMail { get; set; }
         public string Subject { get; set; }

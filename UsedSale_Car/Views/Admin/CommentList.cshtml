@@ -1,0 +1,32 @@
+﻿@using UsedSale_Car.Models.Classes
+@{
+    ViewBag.Title = "CommentList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yorumlar</h2>
+<br />
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>KULLANICI</th>
+        <th>MAIL</th>
+        <th>YORUM</th>
+        <th>ARABA</th>
+        <th>YORUM SİL</th>
+        <th>YORUM DETAYLARI</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.ID</td>
+            <td>@x.UserName</td>
+            <td>@x.Mail</td>
+            <td>@x.WriteComment</td>
+            <td>@x.Car.Brand.BrandName @x.Car.Model.ModelName</td>
+            <td><a href="/Admin/DeleteComment/@x.ID" class="btn btn-danger">Sil</a></td>
+            <td> <a href="/Car/CarDetail/@x.CarId" class="btn btn-primary">Detaylar</a></td>
+        </tr>
+    }
+</table>

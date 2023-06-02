@@ -1,0 +1,255 @@
+﻿@model UsedSale_Car.Models.Classes.CarListing
+@{
+    ViewBag.Title = "CarIndex";
+    Layout = "~/Views/Shared/_LayoutProject.cshtml";
+}
+
+
+<section class="section section-bg" id="call-to-action" style="background-image: url(~/website/assets/images/banner-image-1-1920x500.jpg); height:300px">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1">
+                <div class="cta-content">
+                    <br>
+                    <br>
+                    <h2>Mevcut<em> Arabalar</em></h2>
+                    <p>İsteğinize Göre Arabaları Arayabilirsiniz ya da Sıralayabilirsiniz</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ***** Call to Action End ***** -->
+<!-- ***** Fleet Starts ***** -->
+<section class="section" id="trainers">
+    <div class="container">
+        <br>
+        <br>
+        @using (Html.BeginForm("CarIndex", "Car", FormMethod.Get))
+        {
+            <div class="contact-form">
+                <form action="#" id="contact">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                            <div class="form-group">
+                                <label>Araç Türü:</label>
+                                <select>
+                                    @foreach (var z in Model.CarTypeTake)
+                                    {
+
+                                        <option value="">-- @z.Name --</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                            <div class="form-group">
+                                <label>Marka:</label>
+
+                                <select name="kelime">
+                                    @foreach (var x in Model.BrandTake)
+                                    {
+
+                                        <option value="@x.BrandName">-- @x.BrandName --</option>
+
+                                    }
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                            <div class="form-group">
+                                <label>Model:</label>
+
+                                <select>
+                                    @foreach (var y in Model.ModelTake)
+                                    {
+                                        <option value="">-- @y.ModelName --</option>
+
+                                    }
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                            <div class="form-group">
+                                <label>Fiyat:</label>
+
+                                <select>
+                                    <option value="">-- 0-50.000 --</option>
+                                    <option value="">-- 50.000-100.000  --</option>
+                                    <option value="">-- 100.000-300.000 --</option>
+                                    <option value="">-- 300.000-500.000 --</option>
+                                    <option value="">-- 500.000-800.000 --</option>
+                                    <option value="">-- 800.000 ve üstü --</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                            <div class="form-group">
+                                <label>Kilometre:</label>
+
+                                <select>
+                                    <option value="">-- 50.000-100.000  --</option>
+                                    <option value="">-- 100.000-300.000 --</option>
+                                    <option value="">-- 300.000-500.000 --</option>
+                                    <option value="">-- 500.000-800.000 --</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                            <div class="form-group">
+                                <label>Yakıt Türü:</label>
+
+                                <select>
+                                    <option value="">-- Dizel --</option>
+                                    <option value="">-- Benzil --</option>
+                                    <option value="">-- LPG --</option>
+                                    <option value="">-- Elektrik --</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                            <div class="form-group">
+                                <label>Vites Türü:</label>
+
+                                <select>
+                                    <option value="">-- Manuel --</option>
+                                    <option value="">-- Otomatik --</option>
+                                    <option value="">-- Yarı Otomatik --</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                            <div class="form-group">
+                                <label>Kapı Sayısı:</label>
+
+                                <select>
+                                    <option value="">-- 2 --</option>
+                                    <option value="">-- 4 --</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                            <div class="form-group">
+                                <label>Number of seats:</label>
+
+                                <select>
+                                    <option value="">-- 2 --</option>
+                                    <option value="">-- 4 --</option>
+                                    <option value="">-- 5 --</option>
+                                    <option value="">-- 6 --</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                            <div class="form-group">
+                                <label>Engine size:</label>
+
+                                <select>
+                                    <option value="">-- All --</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                            <div class="form-group">
+                                <label>Power:</label>
+
+                                <select>
+                                    <option value="">-- All --</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                            <div class="form-group">
+                                <label>Renk: </label>
+                                <select>
+                                    @foreach (var color in Model.ColorTake)
+                                    {
+                                        <option value="">-- @color.Name --</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-sm-4 offset-sm-4">
+                        <div class="main-button text-center">
+                            <a href="#">Ara</a>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                </form>
+            </div>
+        }
+
+        <div class="row">
+            @foreach (var c in Model.CarTake)
+            {
+                <div class="col-lg-4">
+                    <div class="trainer-item">
+
+                        <div class="image-thumb">
+                            <img src="@c.PhotoCarURL" alt="foto" height="200px" width="%100">
+                        </div>
+                        <div class="down-content">
+                            <span>
+                                <h4 style="font-size:x-large"> @c.Brand.BrandName  @c.Model.ModelName</h4>
+                            </span>
+
+                            <h6>@c.Description.Substring(0, 10)</h6>
+                            <br />
+                            <p>
+                                <i class="fa fa-dashboard"></i> @c.Mileage &nbsp;&nbsp;&nbsp;
+                                <i class="fa fa-location-arrow"></i> @c.City.Name &nbsp;&nbsp;&nbsp;
+                                <i class="fa fa-calendar"></i> @c.Year &nbsp;&nbsp;&nbsp;
+                                <br />
+                                <h5 style="color:orangered "><em><i class="fa fa-tag "></i>@c.Price TL</em></h5>  &nbsp;
+                            </p>
+
+                            <ul class="social-icons">
+                                <li><a href="/Car/CarDetail/@c.ID" style="color:indigo">+ Arabayı görüntüle</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+
+
+        <br>
+
+        <nav>
+            <ul class="pagination pagination-lg justify-content-center">
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+    </div>
+</section>
+<!-- ***** Fleet Ends ***** -->

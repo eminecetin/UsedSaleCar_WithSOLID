@@ -8,6 +8,8 @@ namespace UsedSale_Car.Models.Classes
 {
     interface ISearching
     {
+        void SearchAdvert();
+        void OwnerInfoSearch();
 
     }
 }

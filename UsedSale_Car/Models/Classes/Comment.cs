@@ -11,11 +11,13 @@ namespace UsedSale_Car.Models.Classes
         [Key]
         public int ID { get; set; }
         public string Name { get; set; }
+        public string WriteComment { get; set; }
+
         public string eMail { get; set; }
         public string Description { get; set; }
         public DateTime Date { get; set; }
-        public Car Car { get; set; }
-        public int CarID { get; set; }
+        public virtual Car Car { get; set; }
+        public int CarId { get; set; }
 
     }
 }

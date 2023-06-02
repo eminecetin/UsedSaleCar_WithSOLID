@@ -9,27 +9,36 @@ namespace UsedSale_Car.Models.Classes
     public abstract class Users
     {
         [Key]
+        public int ID { get; set; }
+        public string Phone { get; set; }
         private string Name;
         private string Surname;
         private string eMail;
-
-        public string Name_
+        private string Pasword;
+        public string FirstName
         {
             get { return Name; }
             set { Name = value; }
         }
 
-        public string Surname_
+        public string LastName
         {
             get { return Surname; }
             set { Surname = value; }
         }
 
-        public string Email
+        public string Mail
         {
             get { return eMail; }
             set { eMail = value; }
         }
-       
+
+        public string Password
+        {
+            get { return Pasword; }
+            set { Pasword = value; }
+        }
+
+
     }
 }

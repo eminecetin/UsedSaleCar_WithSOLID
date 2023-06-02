@@ -1,0 +1,51 @@
+﻿@using UsedSale_Car.Models.Classes
+@model List<AboutUs>
+@{
+    ViewBag.Title = "AboutIndex";
+    Layout = "~/Views/Shared/_LayoutProject.cshtml";
+}
+
+
+
+<!-- ***** Header Area End ***** -->
+
+<section class="section section-bg" id="call-to-action" style="background-image: url(assets/images/banner-image-1-1920x500.jpg); height: 300px">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1">
+                <div class="cta-content">
+                    <br>
+                    <br />
+                    <h2><em>Hakkımızda</em> Daha Fazlası</h2>
+                    <p>Daha fazlasını öğrenmek için iletişime geçin.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ***** Our Classes Start ***** -->
+<section class="section" id="our-classes">
+    <div class="col-lg-10 offset-lg-1">
+        <br>
+        <div class="row" id="tabs">
+            @foreach (var x in Model)
+            {
+                <div class="col-lg-6">
+                    <section class='tabs-content'>
+                        <article id=''>
+
+                            <img src="@x.FotoUrl" alt="">
+                            <h4>@x.Title</h4>
+
+                            <a href="/About/AboutDetail/@x.ID"><p>@x.Description.Substring(0, 200)...</p></a>
+                            <a href="/About/AboutDetail/@x.ID">Daha fazlası için tılayınız!</a>
+
+
+                        </article>
+                    </section>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+<!-- ***** Our Classes End ***** -->

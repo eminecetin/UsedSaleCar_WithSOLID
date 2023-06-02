@@ -6,43 +6,12 @@ using System.Web;
 
 namespace UsedSale_Car.Models.Classes
 {
-    public class Admin : Users, ILoginService, IAdvertOperation, IListingApproval
+    public class Admin : Users
     {
-        [Key]
-        public int AdminID { get; set; }
-        public void Add()
-        {
-            throw new NotImplementedException();
-        }
+       
 
-        public void ApproveListing(string listingId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Clear()
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool Login(string username, string password)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Logout()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void RejectListing(string listingId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update()
-        {
-            throw new NotImplementedException();
-        }
+        public string AdminName { get; set; }  //private kullanıcı
+        public bool Approve { get; set; }
+        
     }
 }

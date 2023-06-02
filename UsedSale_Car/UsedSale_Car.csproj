@@ -140,7 +140,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Classes\AboutUs.cs" />
     <Compile Include="Models\Classes\Admin.cs" />
-    <Compile Include="Models\Classes\Brands.cs" />
+    <Compile Include="Models\Classes\Brand.cs" />
     <Compile Include="Models\Classes\Car.cs" />
     <Compile Include="Models\Classes\CarListing.cs" />
     <Compile Include="Models\Classes\CarOwner.cs" />
@@ -159,7 +159,8 @@
     <Compile Include="Models\Classes\IListingApproval.cs" />
     <Compile Include="Models\Classes\ILoginService.cs" />
     <Compile Include="Models\Classes\ISearching.cs" />
-    <Compile Include="Models\Classes\Models.cs" />
+    <Compile Include="Models\Classes\IUserRegistration.cs" />
+    <Compile Include="Models\Classes\Model.cs" />
     <Compile Include="Models\Classes\Users.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -259,20 +260,30 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutProject.cshtml" />
-    <Content Include="Views\About\AIndex.cshtml" />
-    <Content Include="Views\About\AboutDetail.cshtml" />
     <Content Include="Views\Contact\ContactIndex.cshtml" />
+    <Content Include="Views\About\AboutIndex.cshtml" />
+    <Content Include="Views\About\AboutDetail.cshtml" />
+    <Content Include="Views\Shared\_CarOwnerLayout.cshtml" />
+    <Content Include="Views\CarOwner\CarOwnerIndex.cshtml" />
+    <Content Include="Views\CarOwner\NewCar.cshtml" />
+    <Content Include="Views\CarOwner\GetCar.cshtml" />
+    <Content Include="Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Views\Home\HomeIndex.cshtml" />
+    <Content Include="Views\Admin\AdminIndex.cshtml" />
+    <Content Include="Views\Admin\NewCar.cshtml" />
+    <Content Include="Views\Admin\GetCar.cshtml" />
+    <Content Include="Views\Admin\CommentList.cshtml" />
+    <Content Include="Views\Admin\ContactList.cshtml" />
+    <Content Include="Views\Admin\GetAbout.cshtml" />
+    <Content Include="Views\Admin\ToApprove.cshtml" />
+    <Content Include="Views\Car\CarIndex.cshtml" />
+    <Content Include="Views\Car\CarDetail.cshtml" />
+    <Content Include="Views\Login\LoginCarOwner.cshtml" />
+    <Content Include="Views\Login\LoginIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Admin\" />
-    <Folder Include="Views\CarOwner\" />
-    <Folder Include="Views\Car\" />
-    <Folder Include="Views\Login\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

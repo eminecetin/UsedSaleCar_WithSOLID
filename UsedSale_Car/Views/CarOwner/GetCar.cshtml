@@ -1,0 +1,120 @@
+﻿@model UsedSale_Car.Models.Classes.Car
+@{
+    ViewBag.Title = "GetCar";
+    Layout = "~/Views/Shared/_CarOwnerLayout.cshtml";
+}
+<h2>Araba Düzenle</h2>
+<br />
+@using (Html.BeginForm("UpdateCar", "CarOwner", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.ID)
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(x => x.Brand.BrandName)
+    @Html.TextBoxFor(x => x.Brand.BrandName, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Model.ModelName)
+    @Html.TextBoxFor(x => x.Model.ModelName, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.CarType)
+    <p>
+
+        Otomobil @Html.RadioButtonFor(m => m.CarType.Name, "Otomobil")&nbsp;&nbsp;
+        Minibüs @Html.RadioButtonFor(m => m.CarType.Name, "Minibüs")&nbsp;&nbsp;
+        Otobüs @Html.RadioButtonFor(m => m.CarType.Name, "Otobüs")&nbsp;&nbsp;
+        Kamyonet @Html.RadioButtonFor(m => m.CarType.Name, "Kamyonet")&nbsp;&nbsp;
+        Kamyon @Html.RadioButtonFor(m => m.CarType.Name, "Kamyon")
+    </p>
+
+    <br />
+    @Html.LabelFor(x => x.Year)
+    @Html.TextBoxFor(x => x.Year, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Mileage)
+    @Html.TextBoxFor(x => x.Mileage, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.PublicationDate)
+    @Html.TextBoxFor(x => x.PublicationDate, new { @class = "form-control" })
+    <br />
+
+    @Html.LabelFor(x => x.City)
+    <p>
+
+        İzmir @Html.RadioButtonFor(m => m.City.Name, "İzmir") &nbsp;&nbsp;
+        Ankara @Html.RadioButtonFor(m => m.City.Name, "Ankara")&nbsp;&nbsp;
+        İstanbul @Html.RadioButtonFor(m => m.City.Name, "İstanbul")
+    </p>
+    <br />
+    @Html.LabelFor(x => x.Price)
+    @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+    <br />
+    <br />
+    @Html.LabelFor(x => x.Color)
+    <p>
+
+        Kırmızı @Html.RadioButtonFor(m => m.Color.Name, "Kırmızı")&nbsp;&nbsp;
+        Sarı @Html.RadioButtonFor(m => m.Color.Name, "Sarı")&nbsp;&nbsp;
+        Yeşil @Html.RadioButtonFor(m => m.Color.Name, "Yeşil")&nbsp;&nbsp;
+        Siyah @Html.RadioButtonFor(m => m.Color.Name, "Siyah")&nbsp;&nbsp;
+        Beyaz @Html.RadioButtonFor(m => m.Color.Name, "Beyaz")
+    </p>
+    <br />
+    @Html.LabelFor(x => x.Engine)
+    @Html.TextBoxFor(x => x.Engine, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.FuelType)
+    @Html.TextBoxFor(x => x.FuelType, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.GearType)
+    @Html.TextBoxFor(x => x.GearType, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Doors)
+    @Html.TextBoxFor(x => x.Doors, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.FoldableMirror)
+    <br />
+    @Html.RadioButtonFor(x => x.FoldableMirror, true, new { @class = "form-check-input" })
+    <label class="form-check-label">Var</label>
+    <br />
+    @Html.RadioButtonFor(x => x.FoldableMirror, false, new { @class = "form-check-input" })
+    <label class="form-check-label">Yok</label>
+    <br />
+    <br />
+    @Html.LabelFor(x => x.CentralLocking)
+    <br />
+    @Html.RadioButtonFor(x => x.CentralLocking, true, new { @class = "form-check-input" })
+    <label class="form-check-label">Var</label>
+    <br />
+    @Html.RadioButtonFor(x => x.CentralLocking, false, new { @class = "form-check-input" })
+    <label class="form-check-label">Yok</label>
+    <br />
+    <br />
+    @Html.LabelFor(x => x.GlassCeiling)
+    <br />
+    @Html.RadioButtonFor(x => x.GlassCeiling, true, new { @class = "form-check-input" })
+    <label class="form-check-label">Var</label>
+    <br />
+    @Html.RadioButtonFor(x => x.GlassCeiling, false, new { @class = "form-check-input" })
+    <label class="form-check-label">Yok</label>
+    <br />
+    <br />
+    @Html.LabelFor(x => x.ParkingSensor)
+    <br />
+    @Html.RadioButtonFor(x => x.ParkingSensor, true, new { @class = "form-check-input" })
+    <label class="form-check-label">Var</label>
+    <br />
+    @Html.RadioButtonFor(x => x.ParkingSensor, false, new { @class = "form-check-input" })
+    <label class="form-check-label">Yok</label>
+    <br />
+    <br />
+    @Html.LabelFor(x => x.PhotoCarURL)
+    @Html.TextBoxFor(x => x.PhotoCarURL, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Description)
+    @Html.TextAreaFor(x => x.Description, 15, 1, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary" style="font-size:large">Güncelle</button>
+    <br />
+    <br />
+
+}

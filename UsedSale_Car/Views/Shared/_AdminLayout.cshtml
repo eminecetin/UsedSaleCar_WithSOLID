@@ -1,0 +1,52 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<title>Admin Paneli</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,900;1,400;1,900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href="~/web/assets/css/bootstrap.min.css">
+
+<link rel="stylesheet" type="text/css" href="~/web/assets/css/font-awesome.css">
+
+<link rel="stylesheet" href="~/web/assets/css/style.css">
+<body>
+    <!-- Sidebar -->
+    <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:15%">
+        <h3 class="w3-bar-item" style="background-color: darkgrey; height: 70PX; font-family: 'Merriweather', serif; padding-top:20PX"> Menü</h3>
+        <a href="/Admin/AdminIndex/" class="w3-bar-item w3-button">Arabalar</a>
+        <a href="/Admin/ToApprove/" class="w3-bar-item w3-button">Onay Bekleyen Arabalar</a>
+        <a href="/Admin/CommentList/" class="w3-bar-item w3-button">Yorumlar</a>
+        <a href="/Admin/ContactList/" class="w3-bar-item w3-button">İletişim</a>
+        <a href="/Admin/AboutList/" class="w3-bar-item w3-button">Hakkımızda</a>
+        <a href="/Home/HomeIndex/" class="w3-bar-item w3-button">Siteye Git</a>
+        <a href="/Login/LogOut/" class="w3-bar-item w3-button">Çıkış Yap</a>
+    </div>
+
+    <!-- Page Content -->
+    <div style="margin-left:15%">
+
+        <div class="w3-container w3-teal" style="height: 70PX">
+            <br />
+            <div class="coll-lg-2 offset-lg-4">
+                <h2 style="font-family: 'Merriweather', serif;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~ADMİN PANELİ~</h2>
+            </div>
+
+        </div>
+        <br />
+        <div class="w3-container">
+            @RenderBody()
+        </div>
+
+    </div>
+
+</body>
+</html>

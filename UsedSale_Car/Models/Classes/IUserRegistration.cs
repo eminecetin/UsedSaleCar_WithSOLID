@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace UsedSale_Car.Models.Classes
 {
-    interface ILoginService
+    interface IUserRegistration
     {
-        bool HasAccount(string userName, string password);
-
-        bool Login(string userName, string password);
-        void Logout();
+        bool Register(string userName, string password);
     }
 }
