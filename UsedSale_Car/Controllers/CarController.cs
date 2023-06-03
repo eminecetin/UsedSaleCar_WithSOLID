@@ -82,7 +82,7 @@ namespace UsedSale_Car.Controllers
         }
 
         [HttpGet]
-        public PartialViewResult ToComment(int id)
+        public PartialViewResult ToComment(int id=0)
         {
             ViewBag.value = id;
             return PartialView();

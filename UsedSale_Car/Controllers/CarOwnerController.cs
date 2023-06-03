@@ -84,7 +84,7 @@ namespace UsedSale_Car.Controllers
         }
 
         // GET: CarOwner (araba silme)
-        public ActionResult DeleteCar(int id)
+        public ActionResult DeleteCar(int id=0)
         {
             var findedCar = ca.Cars.Find(id);
             ca.Cars.Remove(findedCar);
@@ -93,7 +93,7 @@ namespace UsedSale_Car.Controllers
         }
 
         // GET: CarOwner (araba güncelleme)
-        public ActionResult GetCar(int id)
+        public ActionResult GetCar(int id=0)
         {
             var findedCar2 = ca.Cars.Find(id);
 
