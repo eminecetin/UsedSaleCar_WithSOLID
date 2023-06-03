@@ -10,16 +10,37 @@ namespace UsedSale_Car.Controllers
 {
     public class AdminController : Controller
     {
-
         Context ca = new Context();
-        CarListing cl = new CarListing();
+        CarListing cbm = new CarListing();
         // GET: Admin
 
         [Authorize]
         public ActionResult AdminIndex()
         {
-            cl.CarTake = ca.Cars.Where(x => x.Approve == true).ToList();
-            return View(cl);
+            cbm.CarTake = ca.Cars.Where(x => x.Approve == true).ToList();
+            string adminName = Session["AdminName"] as string;
+            string lastName = Session["LastName"] as string;
+            string firstName = Session["FirstName"] as string;
+            string mail = Session["Mail"] as string;
+            string phone = Session["Phone"] as string;
+            string password = Session["Password"] as string;
+            int id = 0;
+
+            //id eşleme
+            if (Session["ID"] != null && int.TryParse(Session["ID"].ToString(), out int parsedId))
+            {
+                id = parsedId;
+            }
+
+            // View'a kullanıcı bilgilerini taşımak
+            ViewBag.AdminName = adminName;
+            ViewBag.LastName = lastName;
+            ViewBag.FirstName = firstName;
+            ViewBag.Mail = mail;
+            ViewBag.Phone = phone;
+            ViewBag.Password = password;
+            ViewBag.ID = id;
+            return View(cbm);
         }
 
         // GET: Admin (araba ekleme)
@@ -47,7 +68,7 @@ namespace UsedSale_Car.Controllers
         }
 
         // GET: Admin (araba güncelleme)
-        public ActionResult GetCar(int id)
+        public ActionResult GetCar(int id=0)
         {
             var findedCar2 = ca.Cars.Find(id);
             return View("GetCar", findedCar2);
@@ -81,39 +102,10 @@ namespace UsedSale_Car.Controllers
         //Admin (Araba onaylama)
         public ActionResult ToApprove(Car car)
         {
-            cl.CarTake = ca.Cars.Where(x => x.Approve == false).ToList();
+            cbm.CarTake = ca.Cars.Where(x => x.Approve == false).ToList();
 
-            return View(cl);
+            return View(cbm);
         }
-
-        //[HttpGet]
-        //public ActionResult NewToApprove()
-        //{
-
-        //    return View();
-        //}
-
-        //[HttpPost]
-        //public ActionResult NewToApprove(Car c)
-        //{
-        //    ca.Cars.Add(c);
-        //    ca.SaveChanges();
-        //    return RedirectToAction("Index");
-        //}
-        //// GET: Admin (onay güncelleme)
-        //public ActionResult GetApprove(int id)
-        //{
-        //    var findedCar2 = ca.Cars.Find(id);
-        //    return View("GetApprove", findedCar2);
-        //}
-
-        //public ActionResult UpdateApprove(Car c)
-        //{
-        //    var findedCar3 = ca.Cars.Find(c.ID);
-        //    findedCar3.Approve = c.Approve;
-        //    ca.SaveChanges();
-        //    return RedirectToAction("ToApprove");
-        //}
 
 
 
@@ -125,7 +117,7 @@ namespace UsedSale_Car.Controllers
         }
 
         // GET: Admin (yorum silme)
-        public ActionResult DeleteComment(int id)
+        public ActionResult DeleteComment(int id=0)
         {
             var deleteComment = ca.Comments.Find(id);
             ca.Comments.Remove(deleteComment);
@@ -134,7 +126,7 @@ namespace UsedSale_Car.Controllers
         }
 
         // GET: Admin (yorum getir)
-        public ActionResult GetComment(int id)
+        public ActionResult GetComment(int id=0)
         {
             var comment = ca.Comments.Find(id);
             return View("GetComment", comment);
@@ -164,7 +156,7 @@ namespace UsedSale_Car.Controllers
         }
 
         // GET: Admin (about silme)
-        public ActionResult DeleteAbout(int id)
+        public ActionResult DeleteAbout(int id=0)
         {
             var findedAbout = ca.AboutUses.Find(id);
             ca.AboutUses.Remove(findedAbout);
@@ -173,7 +165,7 @@ namespace UsedSale_Car.Controllers
         }
 
         // GET: Admin (about güncelleme)
-        public ActionResult GetAbout(int id)
+        public ActionResult GetAbout(int id=0)
         {
             var findedAbout = ca.AboutUses.Find(id);
             return View("GetAbout", findedAbout);
@@ -198,8 +190,7 @@ namespace UsedSale_Car.Controllers
         }
 
         // GET: Admin (contact silme)
-       
-        public ActionResult DeleteContact(int id)
+        public ActionResult DeleteContact(int id=0)
         {
             var findedContact = ca.Contacts.Find(id);
             ca.Contacts.Remove(findedContact);

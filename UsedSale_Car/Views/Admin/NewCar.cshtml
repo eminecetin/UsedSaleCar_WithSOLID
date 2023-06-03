@@ -10,6 +10,16 @@
     @Html.LabelFor(x => x.ID)
     @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = "readonly" })
     <br />
+    <p>
+        @Html.LabelFor(x => x.CarOwner.FirstName) : @Html.DisplayFor(x => x.CarOwner.FirstName)
+        <br />
+        @Html.LabelFor(x => x.CarOwner.LastName)  :  @Html.DisplayFor(x => x.CarOwner.LastName)
+        <br />
+        @Html.LabelFor(x => x.CarOwner.Phone)  :  @Html.DisplayFor(x => x.CarOwner.Phone)
+        <br />
+        @Html.LabelFor(x => x.CarOwner.Mail)  :  @Html.DisplayFor(x => x.CarOwner.Mail)
+        <br />
+    </p>
     @Html.LabelFor(x => x.Brand.BrandName)
     @Html.TextBoxFor(x => x.Brand.BrandName, new { @class = "form-control" })
     <br />
@@ -126,4 +136,3 @@
     <br />
     <br />
 </form>
-

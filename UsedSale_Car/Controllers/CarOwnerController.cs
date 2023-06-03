@@ -24,21 +24,22 @@ namespace UsedSale_Car.Controllers
             string password = Session["Password"] as string;
             int id = 0;
 
+            //id si eşleşen araç sahipleri gelsin
             if (Session["ID"] != null && int.TryParse(Session["ID"].ToString(), out int parsedId))
             {
                 id = parsedId;
             }
 
-            //id si eşleşen arabalar gelsin
+
 
             // View'a kullanıcı bilgilerini taşımak
-            // cbm.ValueCar = ca.Cars.Where(i => i.CarOwner.LastName== lastName).ToString(); 
             ViewBag.LastName = lastName;
             ViewBag.FirstName = firstName;
             ViewBag.Mail = mail;
             ViewBag.Phone = phone;
             ViewBag.Password = password;
             ViewBag.ID = id;
+
             cl.CarTake = ca.Cars.Where(x => x.CarOwner.ID == id).ToList();
             return View(cl);
         }
@@ -52,35 +53,34 @@ namespace UsedSale_Car.Controllers
         [HttpPost]
         public ActionResult NewCar(Car c)
         {
+
             //Kullanıcı bilgilerini Session'dan almak
             string lastName = Session["LastName"] as string;
             string firstName = Session["FirstName"] as string;
             string mail = Session["Mail"] as string;
             string phone = Session["Phone"] as string;
             string password = Session["Password"] as string;
-            int id = (int)Session["ID"];
-            ca.CarOwners.Where(i => i.ID == id).
-                Where(i => i.FirstName == firstName).
-                Where(i => i.LastName == lastName).
-                Where(i => i.Phone == phone).
-                Where(i => i.Password == password).
-                Where(i => i.Mail == mail).ToList();
+            int id = 0;
 
-            ViewBag.owner = ca.Cars.Where(i => i.CarOwner.ID == id).ToList();
+            if (Session["ID"] != null && int.TryParse(Session["ID"].ToString(), out int parsedId))
+            {
+                id = parsedId;
+            }
 
+            ViewBag.LastName = lastName;
+            ViewBag.FirstName = firstName;
+            ViewBag.Mail = mail;
+            ViewBag.Phone = phone;
+            ViewBag.Password = password;
+            ViewBag.ID = id;
+            cl.CarTake = ca.Cars.Where(x => x.CarOwner.ID == id).ToList();
+            c.CarOwner.ID = id;
+            c.CarOwner.FirstName = firstName;
             c.Approve = false;
 
             ca.Cars.Add(c);
             ca.SaveChanges();
-            return RedirectToAction("CarOwnerIndex");
-            //if (null != ca.CarOwners.Where( i=>i.Mail==c.CarOwnerMail))
-            //{
-            //    ca.SaveChanges();
-            //    return RedirectToAction("CarOwnerIndex");
-
-            //}
-            //else { return RedirectToAction("NewCar"); }
-
+            return View("CarOwnerIndex");
         }
 
         // GET: CarOwner (araba silme)

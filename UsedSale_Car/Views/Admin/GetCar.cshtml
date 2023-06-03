@@ -8,9 +8,17 @@
 <br />
 @using (Html.BeginForm("UpdateCar", "Admin", FormMethod.Post))
 {
-    @Html.LabelFor(x => x.ID)
-    @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = "readonly" })
-    <br />
+    <p>@Html.LabelFor(x => x.ID): @Html.DisplayFor(x => x.ID)</p>
+    <p>
+        @Html.LabelFor(x => x.CarOwner.FirstName) : @Html.DisplayFor(x => x.CarOwner.FirstName)
+        <br />
+        @Html.LabelFor(x => x.CarOwner.LastName)  :  @Html.DisplayFor(x => x.CarOwner.LastName)
+        <br />
+        @Html.LabelFor(x => x.CarOwner.Phone)  :  @Html.DisplayFor(x => x.CarOwner.Phone)
+        <br />
+        @Html.LabelFor(x => x.CarOwner.Mail)  :  @Html.DisplayFor(x => x.CarOwner.Mail)
+        <br />
+    </p>
     @Html.LabelFor(x => x.Brand.BrandName)
     @Html.TextBoxFor(x => x.Brand.BrandName, new { @class = "form-control" })
     <br />
@@ -78,6 +86,14 @@
     @Html.RadioButtonFor(x => x.FoldableMirror, false, new { @class = "form-check-input" })
     <label class="form-check-label">Yok</label>
     <br />
+    @Html.LabelFor(x => x.FogLights)
+    <br />
+    @Html.RadioButtonFor(x => x.FogLights, true, new { @class = "form-check-input" })
+    <label class="form-check-label">Var</label>
+    <br />
+    @Html.RadioButtonFor(x => x.FogLights, false, new { @class = "form-check-input" })
+    <label class="form-check-label">Yok</label>
+    <br />
     <br />
     @Html.LabelFor(x => x.CentralLocking)
     <br />
@@ -112,6 +128,7 @@
     @Html.LabelFor(x => x.Description)
     @Html.TextAreaFor(x => x.Description, 15, 1, new { @class = "form-control" })
     <br />
+
     @Html.LabelFor(x => x.Approve)
     <br />
     @Html.RadioButtonFor(x => x.Approve, true, new { @class = "form-check-input" })

@@ -4,6 +4,7 @@
     Layout = "~/Views/Shared/_CarOwnerLayout.cshtml";
 }
 
+<h5> Araç Sahibi: @ViewBag.FirstName  @ViewBag.LastName </h5>
 <h2>ARABALAR</h2>
 <br />
 <table class="table table-bordered">
@@ -23,12 +24,12 @@
             <th> @x.Brand.BrandName </th>
             <th> @x.Model.ModelName </th>
             <th> @x.Price </th>
-            <th> <a href="/Admin/DeleteCar/@x.ID" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i>Sil</a></th>
-            <th> <a href="/Admin/GetCar/@x.ID" class="btn btn-warning">Düzenle</a></th>
+            <th> <a href="/CarOwner/DeleteCar/@x.ID" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i>Sil</a></th>
+            <th> <a href="/CarOwner/GetCar/@x.ID" class="btn btn-warning">Düzenle</a></th>
             <th> <a href="/Car/CarDetail/@x.ID" class="btn btn-primary">Detaylar</a></th>
         </tr>
     }
 </table>
 
-<a href="/CarOwner/NewCar" class="btn btn-info" style="font-size:large">ARABA EKLE</a>
+<a href="/CarOwner/NewCar/@ViewBag.ID" class="btn btn-info" style="font-size:large">ARABA EKLE</a>
 

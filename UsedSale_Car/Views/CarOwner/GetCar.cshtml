@@ -7,8 +7,20 @@
 <br />
 @using (Html.BeginForm("UpdateCar", "CarOwner", FormMethod.Post))
 {
-    @Html.LabelFor(x => x.ID)
+    <p>Araba @Html.LabelFor(x => x.ID)</p>
     @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    <p>
+        @Html.LabelFor(x => x.CarOwner.FirstName) :  @Html.DisplayFor(x => x.CarOwner.FirstName)
+        <br />
+        @Html.LabelFor(x => x.CarOwner.LastName)  :  @Html.DisplayFor(x => x.CarOwner.LastName)
+        <br />
+        @Html.LabelFor(x => x.CarOwner.Phone)  :  @Html.DisplayFor(x => x.CarOwner.Phone)
+        <br />
+        @Html.LabelFor(x => x.CarOwner.Mail)  :  @Html.DisplayFor(x => x.CarOwner.Mail)
+        <br />
+    </p>
+
     <br />
     @Html.LabelFor(x => x.Brand.BrandName)
     @Html.TextBoxFor(x => x.Brand.BrandName, new { @class = "form-control" })
@@ -80,6 +92,15 @@
     <label class="form-check-label">Yok</label>
     <br />
     <br />
+    @Html.LabelFor(x => x.FogLights)
+    <br />
+    @Html.RadioButtonFor(x => x.FogLights, true, new { @class = "form-check-input" })
+    <label class="form-check-label">Var</label>
+    <br />
+    @Html.RadioButtonFor(x => x.FogLights, false, new { @class = "form-check-input" })
+    <label class="form-check-label">Yok</label>
+    <br />
+    <br />
     @Html.LabelFor(x => x.CentralLocking)
     <br />
     @Html.RadioButtonFor(x => x.CentralLocking, true, new { @class = "form-check-input" })
@@ -110,8 +131,10 @@
     @Html.LabelFor(x => x.PhotoCarURL)
     @Html.TextBoxFor(x => x.PhotoCarURL, new { @class = "form-control" })
     <br />
+
+
     @Html.LabelFor(x => x.Description)
-    @Html.TextAreaFor(x => x.Description, 15, 1, new { @class = "form-control" })
+    @Html.TextAreaFor(x => x.Description, 5, 1, new { @class = "form-control" })
     <br />
     <button class="btn btn-primary" style="font-size:large">Güncelle</button>
     <br />

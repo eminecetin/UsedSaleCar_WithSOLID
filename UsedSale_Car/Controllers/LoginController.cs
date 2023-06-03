@@ -26,6 +26,13 @@ namespace UsedSale_Car.Controllers
             {
                 FormsAuthentication.SetAuthCookie(info.AdminName, false);
                 Session["AdminName"] = info.AdminName.ToString();
+                Session["LastName"] = info.LastName.ToString();
+                Session["FirstName"] = info.FirstName.ToString();
+                Session["Mail"] = info.Mail.ToString();
+                Session["Phone"] = info.Phone.ToString();
+                Session["Password"] = info.Password.ToString();
+                Session["ID"] = info.ID;
+
                 return RedirectToAction("AdminIndex", "Admin");
 
             }
@@ -36,7 +43,7 @@ namespace UsedSale_Car.Controllers
         public ActionResult LogOut()
         {
             FormsAuthentication.SignOut();
-            return RedirectToAction("LoginIndex", "Login");
+            return RedirectToAction("CustomerLogin", "Login");
         }
 
 
@@ -54,6 +61,11 @@ namespace UsedSale_Car.Controllers
             {
                 FormsAuthentication.SetAuthCookie(info.LastName, false);
                 Session["LastName"] = info.LastName.ToString();
+                Session["FirstName"] = info.FirstName.ToString();
+                Session["Mail"] = info.Mail.ToString();
+                Session["Phone"] = info.Phone.ToString();
+                Session["Password"] = info.Password.ToString();
+                Session["ID"] = info.ID;
                 return RedirectToAction("CarOwnerIndex", "CarOwner");
 
             }
@@ -67,27 +79,39 @@ namespace UsedSale_Car.Controllers
         public ActionResult LogOutCarOwner()
         {
             FormsAuthentication.SignOut();
-            return RedirectToAction("LoginCarOwner", "Login");
+            return RedirectToAction("CustomerLogin", "Login");
         }
 
+
+        // GET: Customer Login
         public ActionResult CustomerLogin()
         {
             return View();
         }
+
         [HttpPost]
         public ActionResult CustomerLogin(Customer ad)
         {
+
             var info = c.Customers.FirstOrDefault(x => x.Mail == ad.Mail && x.Password == ad.Password);
-            if(info != null)
+            if (info != null)
             {
                 FormsAuthentication.SetAuthCookie(info.Mail, false);
                 Session["Mail"] = info.Mail.ToString();
+                Session["LastName"] = info.LastName.ToString();
+                Session["FirstName"] = info.FirstName.ToString();
+                Session["Mail"] = info.Mail.ToString();
+                Session["Phone"] = info.Phone.ToString();
+                Session["Password"] = info.Password.ToString();
+                Session["ID"] = info.ID;
                 return RedirectToAction("HomeIndex", "Home");
+
             }
             else
             {
                 return View();
             }
+
         }
     }
 }
