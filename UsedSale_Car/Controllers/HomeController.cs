@@ -38,5 +38,6 @@ namespace UsedSale_Car.Controllers
 
             return View(cl);
         }
+
     }
 }

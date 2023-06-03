@@ -165,6 +165,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="weblogin\css\style.css" />
+    <Content Include="weblogin\images\b4.jpg" />
+    <Content Include="weblogin\index.html" />
+    <Content Include="weblogin\w3layouts-License.txt" />
     <Content Include="web\about.html" />
     <Content Include="web\assets\css\bootstrap.min.css" />
     <Content Include="web\assets\css\font-awesome.css" />
@@ -281,6 +285,9 @@
     <Content Include="Views\Car\CarDetail.cshtml" />
     <Content Include="Views\Login\LoginCarOwner.cshtml" />
     <Content Include="Views\Login\LoginIndex.cshtml" />
+    <Content Include="weblogin\fonts\Asap-Regular.ttf" />
+    <Content Include="weblogin\fonts\Audiowide-Regular.ttf" />
+    <Content Include="Views\Login\CustomerLogin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

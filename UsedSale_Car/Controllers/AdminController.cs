@@ -10,6 +10,7 @@ namespace UsedSale_Car.Controllers
 {
     public class AdminController : Controller
     {
+
         Context ca = new Context();
         CarListing cl = new CarListing();
         // GET: Admin
@@ -197,6 +198,7 @@ namespace UsedSale_Car.Controllers
         }
 
         // GET: Admin (contact silme)
+       
         public ActionResult DeleteContact(int id)
         {
             var findedContact = ca.Contacts.Find(id);

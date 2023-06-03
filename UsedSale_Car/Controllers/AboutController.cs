@@ -17,7 +17,7 @@ namespace UsedSale_Car.Controllers
             var degerler = c.AboutUses.ToList();
             return View(degerler);
         }
-        public ActionResult AboutDetail(int id)
+        public ActionResult AboutDetail(int id=0)
         {
             var d = c.AboutUses.Where(a => a.ID ==id).ToList();
             return View(d);

@@ -70,6 +70,24 @@ namespace UsedSale_Car.Controllers
             return RedirectToAction("LoginCarOwner", "Login");
         }
 
-        
+        public ActionResult CustomerLogin()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult CustomerLogin(Customer ad)
+        {
+            var info = c.Customers.FirstOrDefault(x => x.Mail == ad.Mail && x.Password == ad.Password);
+            if(info != null)
+            {
+                FormsAuthentication.SetAuthCookie(info.Mail, false);
+                Session["Mail"] = info.Mail.ToString();
+                return RedirectToAction("HomeIndex", "Home");
+            }
+            else
+            {
+                return View();
+            }
+        }
     }
 }
